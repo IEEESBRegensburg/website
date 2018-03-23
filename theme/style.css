@@ -1,0 +1,485 @@
+/*
+    Theme name: IEEE Student Branch Regensburg Custom Theme
+    Author: Kenny Pflug, Andreas Weinzierl
+    Author URI: http://feO2x.azurewebsites.net
+    Version: 0.5
+    Description: This custom theme is specifically build for the IEEE Student Branch Regensburg. Please do not forward it to third parties without the permissions of the authors.
+*/
+
+/*
+    -------------------------------
+    1.0 - Core components
+    -------------------------------
+*/
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    display: block;
+}
+
+#content-wrapper {
+    margin-top: 50px; /* This corresponds to the height of the fixed top navbar. */
+}
+
+#main-content-container {
+    background-color: white;
+}
+
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*
+    -------------------------------
+    1.1 - More and Page Buttons
+    -------------------------------
+*/
+
+.more-button,
+.page-numbers {
+    width: 100%;
+    max-width: 110px;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 5px 0;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.page-numbers {
+    display: inline-block;
+    margin-right: 10px;
+    width: 30px;
+}
+
+.more-button:hover,
+.more-button:focus,
+.page-numbers:hover,
+.page-numbers:focus {
+    text-decoration: none;
+    color: white;
+}
+
+.more-button:hover,
+.page-numbers:not(.current):not(.dots):hover {
+    background-color: #006699;
+}
+
+.current {
+    background-color: #006699;
+}
+
+.xl-more-button {
+    max-width: 220px;
+}
+
+.xxl-more-button {
+    max-width: 330px;
+}
+
+.mobile-align-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 992px) {
+
+    .mobile-align-center {
+        margin-left: initial;
+        margin-right: initial;
+    }
+}
+
+/*
+    -------------------------------
+    1.2 - Header Navigation Bar
+    -------------------------------
+*/
+
+.brand-image {
+    height: 50px;
+    display: block;
+}
+
+.brand-image img {
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.navbar-default {
+    /*background-color: #dde3e9;*/
+    background-color: #dfe5eb;
+    border-width: 0;
+}
+
+.navbar-right {
+    margin-right: 0;
+}
+
+.navbar-default .navbar-nav > li > a {
+    font-family: "Roboto", sans-serif;
+    color: #333;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a:hover
+{
+    background-color: #006699;
+    color: white;
+}
+
+.navbar-default .navbar-toggle {
+    -ms-border-radius: 0;
+    border-radius: 0;
+    border-color: white;
+    background-color: #006699;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #006699;
+}
+
+/*
+    -------------------------------
+    1.3 - Side Bar and Footer
+    -------------------------------
+*/
+
+.img-sponsor-sidebar {
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 767px)
+{
+    .img-sponsor-sidebar {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    .img-sponsor-sidebar {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 400px)
+{
+    .img-sponsor-sidebar {
+        width: 70%;
+    }
+}
+
+footer {
+    background-color: #dfe5eb;
+    margin-top: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer p {
+    margin-bottom: 3px;
+}
+
+/*
+    -------------------------------
+    3.0 - Front Page
+    -------------------------------
+*/
+
+#home {
+    -ms-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    height: 866px;  /* This value is derived from the height of the background-image - please update it if you exchange the image */
+}
+
+.ol-container {
+    height: 100%;
+}
+
+.front-page-section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.front-page-section-header {
+    margin-bottom: 15px;
+}
+
+.front-page-section-header h1 {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#home-overlay {
+    visibility: hidden;
+    position: relative;
+    height: 100%;
+    background-color: #eeeeee;
+    background-color: rgba(238, 238, 238, 0.65);
+}
+
+.home-image {
+    position: absolute;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    max-width: initial;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.down-arrow-floating {
+    position: absolute;
+    bottom: 40px;
+    margin: 0 auto;
+    left: 50%;
+    margin-right: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+.down-arrow {
+    display: block;
+    margin: 40px auto;
+}
+
+.section-header-image,
+.front-page-section-header-image {
+    -ms-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.menu-social ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+.menu-social ul li {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-social li a,
+.menu-social li a:link,
+.menu-social li a:visited {
+    color: #333;
+    text-decoration: none;
+}
+
+.menu-social li a:hover,
+.menu-social li a:active {
+    color: #006699;
+    text-decoration: none;
+}
+
+.menu-social li a > p:before {
+    display: block;
+    padding: 0 20px;
+    font-family: 'Fontawesome';
+    font-size: 40px;
+    color: inherit;
+    -webkit-font-smoothing: antialiased;
+    content: '\f0c0';
+}
+
+.menu-social li a[href*="facebook.com"] > p:before { content: '\f09a' }
+.menu-social li a[href*="twitter.com"] p:before { content: '\f099' }
+.menu-social li a[href*="plus.google.com"] p:before { content: '\f0d5' }
+.menu-social li a[href*="github.com"] p:before { content: '\f09b' }
+.menu-social li a[href*="youtube.com"] p:before { content: '\f167' }
+.menu-social li a[href*="atom"] p:before { content: '\f09e' }
+.menu-social li a[href*="rss"] p:before { content: '\f09e' }
+
+@media screen and (max-width: 368px) {
+    .menu-social ul li {
+        position: relative;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .menu-social li a > p:before {
+        padding: 0 40px;
+        font-size: 60px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .social-media-element div:first-child {
+        -webkit-transition: transform 250ms ease-out;
+        transition: transform 250ms ease-out;
+    }
+
+    .social-media-element div:first-child:hover {
+        -webkit-transform: scale3d(1.1, 1.1, 1.0);
+        transform: scale3d(1.1, 1.1, 1.0);
+    }
+
+    .page-numbers {
+        width: 110px;
+    }
+}
+
+.excom-list {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+.member {
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.member img {
+    border-radius: 50%;
+    width: 150px;
+}
+
+.member h4 {
+    margin-bottom: 5px;
+}
+
+@media screen and (min-width: 500px)
+{
+    .member
+    {
+        display: inline-block;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+/*
+    -------------------------------
+    4.0 - Posts and Pages
+    -------------------------------
+*/
+
+#top-image {
+    height: 200px;
+    -ms-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#top-image-text-area {
+    background-color: #006699;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    padding-left: 15px;
+    padding-right: 30px;
+}
+
+#top-image-text-area h1 {
+    margin: 30px 0;
+}
+
+@media screen and (min-width: 768px)
+{
+    #top-image-text-area {
+        left: 60px;
+        min-width: 240px;
+        padding-right: 60px;
+    }
+}
+
+.post {
+    margin-bottom: 40px;
+}
+
+.post > h2:first-child {
+    margin-bottom: 5px;
+}
+
+.post-excerpt {
+    margin-left: -10px;
+    padding-left: 8px;
+    border-left: 2px solid #b6d3e4;
+}
+
+/*
+    -------------------------------
+    5.0 WordPress Classes
+    -------------------------------
+*/
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignright {
+    display: block;
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+.alignleft {
+    display: block;
+}
+
+.size-large {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
